@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RotarClick"></activity>
+        <activity android:name=".menu_des"></activity>
+        <activity android:name=".RotarClick" />
         <activity android:name=".menu" />
         <activity android:name=".Bordes" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".menu_des">
+        <activity android:name=".Menu_desplegable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
