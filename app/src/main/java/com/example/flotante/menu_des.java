@@ -12,10 +12,11 @@ import android.widget.Toast;
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 
 public class menu_des extends AppCompatActivity implements View.OnClickListener {
-    private FABToolbarLayout morph; private FABToolbarLayout layout;
+     private FABToolbarLayout layout;
     private View one, two, three, four;
     private ListView list;
     private View fab;
+    String color="Test ";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,16 +34,16 @@ public class menu_des extends AppCompatActivity implements View.OnClickListener 
         three.setOnClickListener(this);
         four.setOnClickListener(this);
 
-        String[] data = new String[30];
+        final String[] data = new String[30];
         for(int i = 0; i < 30; i++) {
-            data[i] = "Test " + i;
+            data[i] = color + i;
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, data);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                layout.show();
+                Toast.makeText(getApplicationContext(),"clicleaste "+color+id,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -52,16 +53,13 @@ public class menu_des extends AppCompatActivity implements View.OnClickListener 
                 layout.show();
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
         layout.hide();
     }
 
+
     @Override
-    public void onClick(View v) {
-        Toast.makeText(this, "Element clicked", Toast.LENGTH_SHORT).show();
+    public void onClick(View view) {
+        layout.hide();
     }
-    }
+}
 
